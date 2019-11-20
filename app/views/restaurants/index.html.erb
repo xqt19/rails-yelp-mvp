@@ -1,0 +1,28 @@
+<div class="d-flex justify-content-center">
+    <h1>All Restaurants</h1>
+</div>
+<div class="container">
+    <div class="row m-3">
+        <% @restaurants.each do |restaurant| %>
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">
+                    <%= restaurant.name %>
+                </h5>
+                <h6 class="card-subtitle mb-2 text-muted">
+                    <%= restaurant.address %>
+                </h6>
+                <p class="card-text">
+                    <%= restaurant.category.capitalize %> Dining
+                    <br>
+                    <%= restaurant.phone_number%>
+                </p>
+            </div>
+            <%= link_to "See More", restaurant_path(restaurant), class: 'btn btn-success btn-md btn-block my-3 w-70 justify-content-end' %>
+        </div>
+        <% end %>
+    </div>
+    <div class="d-flex justify-content-center">
+        <%= link_to "Add a new restaurant", new_restaurant_path %>
+    </div>
+</div>

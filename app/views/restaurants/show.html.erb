@@ -1,0 +1,26 @@
+<div class="d-flex justify-content-center my-3">
+    <h1><%= @restaurant.name %></h1>
+</div>
+
+<div class="container">
+    <div class="d-flex justify-content-center">
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">
+                    <%= @restaurant.name %>
+                </h5>
+                <h6 class="card-subtitle mb-2 text-muted">
+                    <%= @restaurant.address %>
+                </h6>
+                <p class="card-text">
+                    <%= @restaurant.category.capitalize %> Dining
+                    <br><%= @restaurant.phone_number %>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="d-flex justify-content-center my-3">
+    <%= link_to 'Home', restaurants_path %>
+</div>
